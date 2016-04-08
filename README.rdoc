@@ -1,6 +1,0 @@
-== RemoteLoc
-
-A website with information on the best places to work remotely
-
-Ruby version: 2.3.0
-Rails version: 4.2.6
