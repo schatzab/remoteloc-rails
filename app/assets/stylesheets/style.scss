@@ -1,0 +1,62 @@
+/* CSS for Remote Loc */
+
+/* Colors */
+$primaryColor: #117B9E;
+$secondColor: #38C4F2; 
+$primaryDark: #117596;
+$white: #ffffff;
+$greyLight: #f5f5f5;
+$greyPrimary: #777777;
+$alertRed: #FA0C1C;
+$alertGreen: #6bac4e;
+
+body { 
+	color: $greyPrimary; 
+	background-color: $greyLight;
+	font-family: 'Catamaran', sans-serif, Verdana;
+	width: 100%; 
+}
+html { overflow-y: scroll; }
+
+a:active, a:link, a:visited { color: $primaryColor; text-decoration: none; } 
+a:hover {  color: $secondColor; text-decoration: none; }
+h2 { color: $primaryColor; }
+
+.inner_container {
+  width: 90%;
+  margin: 0 auto;
+}
+#errorExplanation h2 {
+  color: $alertRed;
+  font-size: 100%
+}
+/* Hide hidden fields in forms */
+.hidden { display: none; }
+
+
+@mixin border-radius($size) {
+  -webkit-border-top-left-radius: $size;
+  -webkit-border-top-right-radius: $size;
+  -webkit-border-bottom-right-radius: $size;
+  -webkit-border-bottom-left-radius: $size;
+  -moz-border-radius-topleft: $size;
+  -moz-border-radius-topright: $size;
+  -moz-border-radius-bottomright: $size;
+  -moz-border-radius-bottomleft: $size;
+  border-top-left-radius: $size;
+  border-top-right-radius: $size;
+  border-bottom-right-radius: $size;
+  border-bottom-left-radius: $size;
+}
+
+@import 'header';
+@import 'search';
+@import 'buttons';
+@import 'images';
+@import 'content';
+@import 'login';
+@import 'addLoc';
+@import 'footer';
+@import 'admin';
+@import 'sap';
+@import 'flash';
