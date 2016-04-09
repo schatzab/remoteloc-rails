@@ -25,3 +25,9 @@
 === puma startup: 2016-04-08 12:08:23 -0700 ===
 [978] * Starting control server on unix:///tmp/puma-status-1460142503228-978
 [978] - Worker 0 (pid: 1064) booted, phase: 0
+[978] - Gracefully shutting down workers...
+[978] === puma shutdown: 2016-04-08 16:14:32 -0700 ===
+[978] - Goodbye!
+=== puma startup: 2016-04-08 16:14:47 -0700 ===
+[1012] * Starting control server on unix:///tmp/puma-status-1460157287545-1012
+[1012] - Worker 0 (pid: 1098) booted, phase: 0
