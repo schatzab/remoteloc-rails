@@ -1,2 +1,20 @@
-<h1>Locs#pending</h1>
-<p>Find me in app/views/locs/pending.html.erb</p>
+<% @page_title = "Pending" %>
+
+<%= link_to("<< Back to List", {:action => 'all'}, :class => 'back-link') %>
+
+<div class="locs edit"> <!-- change from new -->
+	<h2>Make location visible?</h2>
+
+	<%= form_for(:loc, :url => {:action => 'update_pub', :id => @loc.id}) do |f| %> <!-- change from new -->
+
+	<%= error_messages_for(@loc) %>
+	<div summary="Loc form fields">
+			<%= f.check_box(:visible) %> Set location as visible<br><br>
+	</div>
+
+	<div class="form-buttons">
+		<%= submit_tag("Update") %>
+	</div>
+
+	<% end %>
+</div>

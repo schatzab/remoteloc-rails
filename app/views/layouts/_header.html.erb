@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Remote Locations" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	 	<title>Remote Loc | <%= @page_title || "Find a location to work remotely" %></title> <!-- the instance variable @page_title gets its value from each section index page.  If its not there then it defaults to "admin" -->
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Catamaran:400,800' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	  	<!-- this is our primary link to our stylesheets -->
+	  	<%= stylesheet_link_tag('application', :media => 'all' ) %>
+	  	<%= csrf_meta_tag %> <!-- Need this to allow JS and AJAX requests to use site tokens -->
+	</head>
+<body>
+
+<!-- Flash Notices -->
+	<% if !flash[:notice].blank? %>
+		<div class="notice_header">
+			<%= flash[:notice] %>
+		</div>
+		<script>
+    		setTimeout("$('.notice_header').fadeOut('5000')", 3000)
+ 		</script>
+	<% end %>
+
+<!-- Top Nav Bar -->	
+<nav id="headerNav"> <!-- 100% width -->
+	<div class="inner_container"> <!-- 90% width -->
+		<!-- Logo -->
+	    <div class="logo_index"><a href="/">Remote Loc</a></div>   
+
+	    <!-- Show Login OR Username --> 
+	    <div class="header_action_container">
+	    	<% if session[:username] %>
+		    		<!-- Hot Dog Menu -->
+		    		<div class="header_spacing dropdown">
+					    <button class="glyphicon glyphicon-menu-hamburger header_icons" type="button" data-toggle="dropdown"></button>
+					    <ul class="dropdown-menu">
+					    	<!-- Username -->
+					    	<li><a href="#"><%= (session[:username]).humanize %></a></li>
+					    	<!-- Admin Menu -->
+					    	<% if session[:admin] == true %> <!-- if user is admin... -->
+								<li><a href="#"><%= link_to("Admin Menu", :controller => 'access', :action => 'index') %></a></li>
+							<% end %>
+ 					    	<!-- Logout -->
+					     	<li><a href="#"><%= link_to("Logout", :controller => 'access', :action => 'logout') %></a></li>
+					    </ul>
+					</div>
+	    	<% else %>
+		    		<!-- Sign Up -->
+		    		<div class="header_spacing"><%= link_to('sign up', {:controller => 'users', :action => 'new'}, :class => 'BSButton') %></div>
+		    		<!-- Login -->
+					<div class="header_spacing"><%= link_to('login', {:controller => 'access', :action => 'login'}, :class => 'BSButton') %></div>
+	    	<% end %>
+	        <!-- Add Remote Location  -->
+	        <div class="header_spacing headButton"><%= link_to('+ add location', {:controller => 'access', :action => 'addLoc'}) %></div> 
+	    </div>
+
+	</div>
+</nav>

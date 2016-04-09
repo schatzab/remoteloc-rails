@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Remote Locations" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	 	<title>Remote Loc | <%= @page_title || "Admin" %></title> <!-- the instance variable @page_title gets its value from each section index page.  If its not there then it defaults to "admin" -->
+
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Catamaran:400,800' rel='stylesheet' type='text/css'>
+
+	  	<!-- this is our primary link to our stylesheets -->
+	  	<%= stylesheet_link_tag('application', :media => 'all') %>
+	  	<%= csrf_meta_tag %> <!-- Need this to allow JS and AJAX requests to use site tokens -->
+	</head>
+<body>
+
+<!-- Stand-alone Page -->
+<div class="sap">
+	<!-- Flash notice is placed here for relevant pages -->
+	<% if !flash[:notice].blank? %>
+		<div class="notice">
+			<%= flash[:notice] %>
+		</div>
+		<script>
+    		setTimeout("$('.notice').fadeOut('5000')", 3000)
+ 		</script>
+	<% end %>
+
+	<div class="inner_container_sap">
+		<a href="/" class="logo">Remote Loc</a><br>  
+		<!-- before yield -->
+		<%= yield %>
+		<!-- after yield -->
+	</div>
+
+	<!-- Footer Partial -->
+	<div id="footer"><%= render(:partial => 'layouts/footer') %></div>
+</div>

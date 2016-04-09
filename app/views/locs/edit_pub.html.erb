@@ -1,2 +1,19 @@
-<h1>Locs#edit_pub</h1>
-<p>Find me in app/views/locs/edit_pub.html.erb</p>
+<% @page_title = "Edit Location" %>
+
+<%= link_to("<< Back to List", {:action => 'all'}, :class => 'back-link') %>
+
+<div class=""> <!-- change from new -->
+	<h2>Edit Location</h2><!-- change from new -->
+
+	<%= form_for(:loc, :url => {:action => 'update_pub', :id => @loc.id}) do |f| %> <!-- change from new -->
+
+	<!-- references partial _form -->
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+	<!-- end partial -->
+
+	<div class="form-buttons">
+		<%= submit_tag("Update Location") %><!-- change from new -->
+	</div>
+
+	<% end %>
+</div>

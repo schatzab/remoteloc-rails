@@ -1,0 +1,17 @@
+ <%= error_messages_for(@state) %>
+<!-- we need something to reference f, this is done on the primary page where this _form is plugged into -->
+<table summary="State form fields">
+	<tr>
+		<th><%= f.label(:name, "Name *") %></th>
+		<td><%= f.text_field(:name) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label(:position) %></th>
+		<td><%= f.select(:position, 1..@state_count) %></td>
+		<!-- this is a select pull down.  Our position range will be between position 1 and a number that will change, so we put @state_count as a variable (set in our conroller) -->
+	</tr>
+	<tr>
+		<th><%= f.label(:visible) %></th>
+		<td><%= f.check_box(:visible) %></td>
+	</tr>
+</table>

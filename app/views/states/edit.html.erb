@@ -1,2 +1,16 @@
-<h1>States#edit</h1>
-<p>Find me in app/views/states/edit.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="states edit"> <!-- change from new -->
+	<h2>Update State</h2><!-- change from new -->
+
+	<%= form_for(:state, :url => {:action => 'update', :id => @state.id}) do |f| %> <!-- change from new -->
+
+	<!-- references partial _form -->
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+
+	<div class="form-buttons">
+		<%= submit_tag("Update State") %><!-- change from new -->
+	</div>
+
+	<% end %>
+</div>

@@ -1,2 +1,18 @@
-<h1>Cities#new</h1>
-<p>Find me in app/views/cities/new.html.erb</p>
+<% @page_title = "New City" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :state_id => @state.id}, :class => 'back-link') %>
+
+<div class="cities new">
+	<h2>Create City</h2>
+
+	<%= form_for(:city, :url => {:action => 'create', :state_id => @state.id}) do |f| %> 
+	
+	<!-- Partial Code Goes Here -->
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+
+	<div class="form-buttons">
+		<%= submit_tag("Create City") %>
+	</div>
+
+	<% end %>
+</div>

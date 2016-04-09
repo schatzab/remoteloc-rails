@@ -1,0 +1,14 @@
+<% states ||= [] %> 
+<!-- a local variable states, will pass in the states to its array.  These come from layouts/public where we sent :locals -->
+<ul>
+	<% states.each do |states| %>
+	<li>
+		<%= link_to_unless_current(states.name, :action => 'state', :name => states.name) %>
+		<ul>
+			<% states.cities.visible.sorted.each do |city| %>
+			<li><%= link_to_unless_current(city.name, :action => 'city', :permalink => city.permalink) %></li>
+			<% end %>
+		</ul>
+	</li>
+	<% end %>
+</ul>

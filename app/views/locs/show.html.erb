@@ -1,2 +1,55 @@
-<h1>Locs#show</h1>
-<p>Find me in app/views/locs/show.html.erb</p>
+<% @page_title = "Show Location" %>
+
+<%= link_to("<< Back to List", {:action => 'index', :city_id => @city.id}, :class => 'back-link') %> 
+
+<!-- back goes back to index to see ALL values -->
+<div class="locs show">
+	<h2><%= @loc.name %></h2>
+
+	<table summary="Loc detail view">
+		<tr>
+			<th>Name</th>
+			<td><%= @loc.name %></td> 
+		</tr>
+		<tr>
+			<th>City ID</th>
+			<td><%= @loc.city_id %></td> 
+		</tr>
+		<tr>
+			<th>User Input City</th>
+			<td><%= @loc.user_city %></td> 
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><%= @loc.position %></td>
+		</tr>
+		<tr>
+			<th>Visible?</th>
+			<td><%= @loc.visible ? 'true' : 'false' %></td> 
+		</tr>
+		<tr>
+			<th>Content</th>
+			<td><%= @loc.content %></td> 
+		</tr>
+		<tr>
+			<th>Website</th>
+			<td><%= link_to("#{@loc.name} Website", "#{@loc.website}", :class => 'back-link', :target => "_blank") %></td> 
+		</tr>
+		<tr>
+			<th>Phone</th>
+			<td><%= @loc.phone %></td> 
+		</tr>
+		<tr>
+			<th>Address</th>
+			<td><%= @loc.address %></td> 
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @loc.created_at %></td>
+		</tr>
+		<tr>
+			<th>Updated</th>
+			<td><%= @loc.updated_at %></td>
+		</tr>
+	</table>
+</div>

@@ -1,2 +1,15 @@
-<h1>States#delete</h1>
-<p>Find me in app/views/states/delete.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="states delete">
+	<h2> Delete State</h2>
+
+	<%= form_for(:state, :url => {:action => 'destroy', :id => @state.id}) do |f| %>
+
+	<p> Are you sure you want to permanently delete this state?</p>
+	<p class="reference-name"><%= @state.name %></p>
+	<div class="form-buttons">
+		<%= submit_tag("Delete State") %>
+	</div>
+
+	<% end %>
+</div>

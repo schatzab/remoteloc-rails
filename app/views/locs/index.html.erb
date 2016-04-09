@@ -1,2 +1,41 @@
-<h1>Locs#index</h1>
-<p>Find me in app/views/locs/index.html.erb</p>
+<% @page_title = "Locations" %> 
+
+<%= link_to("<< Back to Cities", {:controller => 'cities', :action => 'index', :state_id => @city.state_id}, :class => 'back-link') %> 
+
+<div class="locs index"> <!-- This is just a CSS convention showing controller(loc)/action(index) -->
+	<h2>Locations in <%= @city.name %></h2>
+
+	<%= link_to("+ add new location", {:action => 'new', :city_id => @city.id}, :class => 'primaryButtonAdmin') %> 
+
+	<div><b><%= pluralize(@locs.size, 'location') %> found</b></div><!-- list how many locs we have -->
+
+	<table summary="Loc list">
+		<tr class="table_head">
+			<th>&nbsp;</th>
+			<th>City ID</th>
+			<th>Location</th>
+			<th>Visible?</th>
+			<th>Actions</th>
+		</tr>
+		<% @locs.each do |loc| %>
+		<tr class="table_content">
+			<td><%= loc.position %></td>
+			<td><%= loc.city_id %></td>
+			<td><%= loc.name %></td>
+			<!-- <td class="center"><%#= loc.visible ? 'true' : 'false' %></td> -->
+			<td class="center">
+				<% if loc.visible == false %>
+					<%= link_to("Pending", {:action => 'pending', :id => loc.id, :city_id => @city.id}) %>
+				<% else %>
+					<%= "yes" %>
+				<% end %>
+			</td>  
+			<td>
+				<%= link_to("Show", {:action => 'show', :id => loc.id, :city_id => @city.id}, :class => 'action show') %> 
+				<%= link_to("Edit", {:action => 'edit', :id => loc.id, :city_id => @city.id}, :class => 'action edit') %>
+				<%= link_to("Delete", {:action => 'delete', :id => loc.id, :city_id => @city.id}, :class => 'action delete') %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

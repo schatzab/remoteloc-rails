@@ -1,2 +1,18 @@
-<h1>Users#delete</h1>
-<p>Find me in app/views/users/delete.html.erb</p>
+<% @page_title = "Delete User: #{@user.name}" %>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="user delete">
+	<h2> Delete User</h2>
+
+	<%= form_for(:user, :url => {:action => 'destroy', :id => @user.id}) do |f| %>
+
+	<p> Are you sure you want to permanently delete this user?</p>
+	<p class="reference-name"><%= @user.name %></p>
+	<!-- Displays username again to make sure. -->
+	<div class="form-buttons">
+		<%= submit_tag("Delete User") %>
+	</div>
+
+	<% end %>
+</div>

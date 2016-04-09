@@ -1,2 +1,36 @@
-<h1>States#index</h1>
-<p>Find me in app/views/states/index.html.erb</p>
+
+<% @page_title = "States" %> <!-- note that it's not being output with = after % -->
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %> 
+
+<div class="states index"> <!-- This is just a CSS convention showing controller(state)/action(index) -->
+	<h2>States</h2>
+
+	<%= link_to("+ add new state", {:action => 'new'}, :class => 'primaryButtonAdmin') %> 
+
+	<div><b><%= pluralize(@states.size, 'state') %> found</b></div><!-- list how many states we have -->
+
+	<table summary="State list">
+		<tr class="table_head">
+			<th>&nbsp;</th>
+			<th>State</th>
+			<th>Visible</th>
+			<th>Cities</th>
+			<th>Actions</th>
+		</tr>
+		<% @states.each do |state| %>
+		<tr class="table_content">
+			<td><%= state.position %></td>
+			<td><%= state.name %></td>
+			<td class="center"><%= state.visible ? 'true' : 'false' %></td>
+			<td><%= state.cities.size %></td>
+			<td>
+				<%= link_to("View Cities", {:controller => 'cities', :state_id => state.id}, :class => 'action show') %> 
+				<%= link_to("Show", {:action => 'show', :id => state.id}) %> 
+				<%= link_to("Edit", {:action => 'edit', :id => state.id}) %>
+				<%= link_to("Delete", {:action => 'delete', :id => state.id}) %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>

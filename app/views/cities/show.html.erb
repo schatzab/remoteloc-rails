@@ -1,2 +1,42 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+<% @page_title = "Show City" %>
+
+<%= link_to("<< Back to Cities", {:action => 'index', :state_id => @state.id}, :class => 'back-link') %>
+<!-- back goes back to index to see ALL values -->
+<div class="cities show">
+	<h2> Show City </h2>
+
+	<table summary="City detail view">
+		<tr>
+			<th>State ID</th>
+			<td><%= @city.state_id %></td> 
+		</tr>
+		<tr>
+			<th>City ID</th>
+			<td><%= @city.id %></td> 
+		</tr>
+		<tr>
+			<th>Name</th>
+			<td><%= @city.name %></td> 
+		</tr>
+		<tr>
+			<th>Permalink</th>
+			<td><%= @city.permalink %></td>
+		</tr>
+		<tr>
+			<th>Position</th>
+			<td><%= @city.position %></td>
+		</tr>
+		<tr>
+			<th>Visible?</th>
+			<td><%= @city.visible ? 'true' : 'false' %></td>
+		</tr>
+		<tr>
+			<th>Created</th>
+			<td><%= @city.created_at %></td>
+		</tr>
+		<tr>
+			<th>Updated</th>
+			<td><%= @city.updated_at %></td>
+		</tr>
+	</table>
+</div>
