@@ -1,3 +1,25 @@
-<h1>Public Index Page</h1>
+<div class="loc_each_container_index">
+	<h1>How Does Remote Loc Work?</h1>
 
-<p> line two of text</p>
+	<h3>
+	The world of working inside cubicles under florescent lights is fading into the past, with the ability to work remotely from locations like coffee shops, cafes and libraries turning into the future.  We whole-heartedly agree with this idea and believe that work can be much more enjoyable and productive when the work force is able to choose where they like best to work.  Using Remote Loc as a resource can help you find places in your city which are well suited to giving you a comfortable workspace, finding out the location details before you arrive. <br><br>
+	</h3>
+
+	<div class="main_cta">
+		<h1>Know a great space to work from?</h1>
+		<div class="blueButton"><%= link_to('Add a Location', {:controller => 'access', :action => 'addLoc'}) %></div> 
+	</div>
+</div>
+
+<div class="loc_each_container_index">
+	<h1>Where do you want to work?</h1>
+	<div class="index_images_container">
+		<%= link_to({:action => 'city', :permalink => "portland"}) do %><div class="index_city_boxes box1"><span>Portland</span></div><% end %>
+		<%= link_to({:action => 'city', :permalink => "seattle"}) do %><div class="index_city_boxes box2"><span>Seattle</span></div><% end %>
+		<%= link_to({:action => 'city', :permalink => "sanfrancisco"}) do %><div class="index_city_boxes box3"><span>San Francisco</span></div><% end %>
+
+		<%= link_to({:action => 'city', :permalink => "bend"}) do %><div class="index_city_boxes box4"><span>Bend</span></div><% end %>
+		<%= link_to({:action => 'city', :permalink => "denver"}) do %><div class="index_city_boxes box5"><span>Denver</span></div><% end %>
+		<%= link_to({:action => 'city', :permalink => "honolulu"}) do %><div class="index_city_boxes box6"><span>Honolulu</span></div><% end %>
+	</div>
+</div>
