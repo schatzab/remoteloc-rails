@@ -1,0 +1,77 @@
+/* Buttons Public */
+.primaryButton {
+	font-weight: bold;
+	font-size: 110%;
+	color: $white;
+	border: 1px solid $secondColor;
+	padding: 0.5em 0.5em;
+	font-weight: 300;
+	font-family: 'Catamaran', sans-serif;
+	float: right;
+	@include border-radius(5px);
+}
+.primaryButton:active, .primaryButton:visited, .primaryButton:link { background-color: $secondColor; color: $white; }
+.primaryButton:hover { background-color: $primaryColor; border: 1px solid $primaryColor; }
+
+/* Buttons Admin */
+.primaryButtonAdmin {
+	font-weight: bold;
+	font-size: 110%;
+	color: $white;
+	border: 1px solid $secondColor;
+	margin: 0em 0 0.7em 0;
+	padding: 0.5em 0.5em;
+	font-weight: 300;
+	font-family: 'Catamaran', sans-serif;
+	float: right;
+	@include border-radius(5px);
+}
+.primaryButtonAdmin:active, .primaryButtonAdmin:visited, .primaryButtonAdmin:link { background-color: $secondColor; color: $white; }
+.primaryButtonAdmin:hover { background-color: $primaryColor; border: 1px solid $primaryColor; }
+
+.main_search_button {
+	background-color: transparent;
+	border: 0px solid white;
+	color: $white;
+	font-size: 200%;
+}
+/* Top Nav Button */
+.headButton {
+	font-weight: bold;
+	font-size: 110%;
+	border: 1px solid $secondColor;
+	background-color: $secondColor;
+	color: $white;
+	margin: -0.2em 0 0 0; /* neg margin adjust for container padding */
+	padding: 0.4em 0.7em; 
+	font-weight: 300;
+	font-family: 'Catamaran', sans-serif;
+	float: right;
+	@include border-radius(5px);
+}
+.headButton a:active, .headButton a:visited, .headButton a:link { color: $white; }
+.headButton:hover { background-color: $primaryColor; border: 1px solid $primaryColor; }
+
+/* White Background Button */
+.blueButton {
+	@extend .headButton;
+	font-size: 130%;
+	float: none;
+	display: inline-block;
+	margin: 2em 0 0 0;
+}
+
+/* BootStrap Icon Link */
+.BSButton {
+	margin: 0 0 0 -1.5em;
+	padding: 1.9em; /* must match hover padding */
+	font-size: 100%;
+	font-weight: 300;
+	font-family: 'Catamaran', sans-serif;
+	color: $primaryColor;
+}
+.BSButton:active, .BSButton:visited, .BSButton:link { color: $primaryColor; }
+.BSButton:hover { background-color: rgba(0, 0, 0, 0.1); padding: 1.9em; text-decoration: none; }
+.BSButton_text {
+	@extend .BSButton; /* makes text white */
+}
