@@ -1,13 +1,13 @@
 require 'test_helper'
 
-class AccessControllerTest < ActionController::TestCase
+class CountryControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
   end
 
-  test "should get login" do
-    get :login
+  test "should get show" do
+    get :show
     assert_response :success
   end
 

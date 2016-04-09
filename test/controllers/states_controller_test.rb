@@ -6,13 +6,8 @@ class StatesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get delete" do
-    get :delete
+  test "should get show" do
+    get :show
     assert_response :success
   end
 
@@ -21,8 +16,13 @@ class StatesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get show" do
-    get :show
+  test "should get edit" do
+    get :edit
+    assert_response :success
+  end
+
+  test "should get delete" do
+    get :delete
     assert_response :success
   end
 

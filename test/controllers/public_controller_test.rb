@@ -6,18 +6,8 @@ class PublicControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get state" do
-    get :state
-    assert_response :success
-  end
-
-  test "should get each" do
-    get :each
-    assert_response :success
-  end
-
-  test "should get city" do
-    get :city
+  test "should get show" do
+    get :show
     assert_response :success
   end
 
