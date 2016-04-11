@@ -46,12 +46,12 @@
 }
 
 /* Home Page Images - change image name as cities change */
-.box1 { background-image: url(/assets/index_city_pdx.jpg) } /* Portland */
-.box2 { background-image: url(/assets/index_city_sea.jpg) } /* Seattle */
-.box3 { background-image: url(/assets/index_city_sf.jpg) } /* San Francisco */
-.box4 { background-image: url(/assets/index_city_bend.jpg) } /* Bend */
-.box5 { background-image: url(/assets/index_city_den.jpg) } /* Denver */
-.box6 { background-image: url(/assets/index_city_hnl.jpg) } /* Honolulu */
+.box1 { background-image: image-url('index_city_pdx.jpg') } /* Portland */
+.box2 { background-image: image-url('index_city_sea.jpg') } /* Seattle */
+.box3 { background-image: image-url('index_city_sf.jpg') } /* San Francisco */
+.box4 { background-image: image-url('index_city_bend.jpg') } /* Bend */
+.box5 { background-image: image-url('index_city_den.jpg') } /* Denver */
+.box6 { background-image: image-url('index_city_hnl.jpg') } /* Honolulu */
 
 .loc_each_container {
 	background-color: $white;
