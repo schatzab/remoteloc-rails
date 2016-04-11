@@ -4,8 +4,9 @@ class UsersController < ApplicationController
 
   before_action :confirm_logged_in, :except => [:new, :create]
   # we run confirm_logged_in before all actions except for our login/logout actions.  (see private in application_controller.rb)
-  before_action :confirm_admin
+  before_action :confirm_admin, :except => [:new] 
   # confirmed admin before giving access
+
 
   def index
     @users = User.sorted # on the index we'll show a list of the admin users and it will be sorted (see our method for sorted)
