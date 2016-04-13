@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   before_action :confirm_logged_in, :except => [:new, :create]
   # we run confirm_logged_in before all actions except for our login/logout actions.  (see private in application_controller.rb)
-  before_action :confirm_admin, :except => [:new] 
+  before_action :confirm_admin, :except => [:new, :create] 
   # confirmed admin before giving access
 
 
