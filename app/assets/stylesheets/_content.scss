@@ -27,31 +27,47 @@
 	margin: 0 auto;
 }
 .index_city_boxes {
-	border: 1px $greyLight solid; 
+	border: 1px $white solid; 
 	@include border-radius(7px);
 	padding: 5em; 
 	display: inline-block;
 	margin: 2em; 
 	width: 260px;
 	height: 380px;
+	position: relative;  /* needed for text span */
 }
 .index_city_boxes:hover { 
-	opacity: 0.9;
+	border: 1px $greyPrimary solid; 
 }
 /* Boxes Text Styles */
 .index_city_boxes span {
 	color: $white;
-	font-size: 140%;
+	font-size: 200%;
 	font-weight: bold;
+	text-shadow: 1px 1px rgba(97, 97, 97, 0.7);
+	position: absolute; /* needed to set text span below */
+	top: 0; left: 0;
 }
 
 /* Home Page Images - change image name as cities change */
 .box1 { background-image: image-url('index_city_pdx.jpg') } /* Portland */
+.box1 span { top: 85%; left: 10%;  }
+
 .box2 { background-image: image-url('index_city_sea.jpg') } /* Seattle */
+.box2 span { top: 10%; left: 55%; }
+
 .box3 { background-image: image-url('index_city_sf.jpg') } /* San Francisco */
+.box3 span { top: 85%; left: 25%; }
+
 .box4 { background-image: image-url('index_city_bend.jpg') } /* Bend */
+.box4 span { top: 55%; left: 65%; }
+
 .box5 { background-image: image-url('index_city_den.jpg') } /* Denver */
+.box5 span { top: 85%; left: 10%; }
+
 .box6 { background-image: image-url('index_city_hnl.jpg') } /* Honolulu */
+.box6 span { top: 55%; left: 45%; }
+
 
 .loc_each_container {
 	background-color: $white;
