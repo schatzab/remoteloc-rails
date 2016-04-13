@@ -17,10 +17,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    # create a new admin user
+    # Create New User!
     @user = User.new(user_params) # give safe parameters 
     if @user.save # if were able to save, then follow these steps:
       flash[:notice] = 'User created.'
+      session[:user_id] = user.id
+      session[:admin] = user.admin # use this to test if user is an admin
+      session[:username] = user.username # store these values in our session so we can grab these values rather than always going back to DB.
       # redirect new user:      
       redirect_to(:action => 'index')
     else
