@@ -11,12 +11,11 @@ class Loc < ActiveRecord::Base
 
 	CONTENT_TYPES = ['text', 'HTML'] #constant allowed to have
 	
-	validates_presence_of :name # This says that the location field in the DB MUST have a name value, otherwise it can't be created or updated.
+	# validate location content before submit to db
+	validates_presence_of :name # the location field in the DB must have a name
 	validates_length_of :name, :maximum => 255
-	# validates_inclusion_of :content_type, :in => CONTENT_TYPES, :message => "must be one of: #{CONTENT_TYPES.join(', ')}"
-	# make sure content is in either text or HTML.
-	validates_presence_of :content
-	# must have some type of content
+	validates_presence_of :content 	# must have some type of content
+	validates_presence_of :user_city # must have city from user
 
 	scope :sorted, lambda { order("locs.position ASC") }
 	scope :sortedAll, lambda { order("locs.id DESC") }

@@ -1,9 +1,9 @@
 class AccessController < ApplicationController
  
-  layout 'sap' # sets our css and which layout to use
+  layout 'sap' # sets css and layout template
 
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout] 
-    # we run confirm_logged_in before all actions except for our login/logout actions.  (see private in application_controller.rb)
+    # run confirm_logged_in before all actions except for login/logout and addloc actions.  (see private in application_controller.rb)
   before_action :confirm_admin, :except => [:login, :attempt_login, :logout, :addLoc] 
 
   def index 

@@ -6,7 +6,7 @@ class PublicController < ApplicationController
   before_action :setup_navigation 
   #see bottom, setup for all actions on this page
   before_action :find_state
-  # make sure all each pages have access to their state and below city, loc, user
+  # access to state, city, loc, user
   before_action :find_city
   before_action :find_loc
   before_action :find_user
@@ -44,10 +44,11 @@ class PublicController < ApplicationController
   def create
     @locs = Loc.new(loc_params)
     if @locs.save
-      flash[:notice] = "Location has been submitted successfully."
+      flash[:notice] = "Location has been submitted successfully"
       redirect_to(:action => 'index')
     else
-      render(:controller => 'access', :action =>'addLoc')
+      redirect_to(:controller => 'access', :action => 'addLoc') # fix so that it render's new
+      flash[:notice] = "Please don't leave any fields blank."
     end
   end
 
