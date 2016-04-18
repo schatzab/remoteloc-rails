@@ -5,7 +5,12 @@
   <div class="inner_search_container">
   <h1>Find a location to work remotely</h1>
 
-  <%= select("post", "", City.visible {|p| [ p.City.permalink] }, {include_blank: 'Select a City'}) %>
+  <%#= select("post", "", @cities.name, {include_blank: 'Select a City'}) %>
+  <%= collection_select(:city_id, 0, City.visible, :id, :name) %>
+
+  <%# @cities.each do |c| %> 
+    <%#= c.name %>
+  <%# end %>
 
   </div>
 </header>

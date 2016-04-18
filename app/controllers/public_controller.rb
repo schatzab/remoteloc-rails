@@ -11,8 +11,7 @@ class PublicController < ApplicationController
   before_action :find_user
 
   def index
-   # @cities = City.visible.sorted #must be plural
-    @city = City.where(visible: true).first
+    @cities = City.order("cities.id ASC").where(visible: true)
   end
 
   def city
