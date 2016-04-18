@@ -1,17 +1,17 @@
 <% @page_title = 'Sign Up' %>
 
 <div class="inner_container_sap_login"> 
-		<h4><b>May the remote workforce be with you!</b></h4>
+  <h4><b>May the remote workforce be with you!</b></h4>
 
-		<%= form_for(:user, :url => {:action => 'create'}) do |f| %> <!-- open the form.  user action create to add a new user -->
+  <%= form_for(:user, url: {action: 'create'}) do |f| %> <!-- open the form.  user action create to add a new user -->
 
-		<%= render(:partial => 'form', :locals => {:f => f} ) %>
-		<!-- shows the partial _form.html.erb in same directory.  lets us use a local variable called f like "this" -->
+    <%= render(partial: 'form', locals: {f: f} ) %>
+  <!-- shows the partial _form.html.erb in same directory.  lets us use a local variable called f like "this" -->
 
-		<div class="form-buttons">
-			<%= submit_tag "SIGN UP", :class => "gen_button_prominent" %>
-			<!-- this is the submit button -->
-		</div>
-	<% end %>
-	<p>Already have an account? <%= link_to('Login', {:controller => 'access', :action => 'login'}) %> </p>
+    <div class="form-buttons">
+      <%= submit_tag "SIGN UP", class: "gen_button_prominent" %>
+    <!-- this is the submit button -->
+    </div>
+  <% end %>
+  <p>Already have an account? <%= link_to('Login', {controller: 'access', action: 'login'}) %> </p>
 </div>

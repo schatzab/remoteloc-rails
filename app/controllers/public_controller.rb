@@ -2,7 +2,6 @@ class PublicController < ApplicationController
   
   layout :index_or_public # a conditional layout (see below)
 
-
   before_action :setup_navigation 
   #see bottom, setup for all actions on this page
   before_action :find_state
@@ -11,15 +10,15 @@ class PublicController < ApplicationController
   before_action :find_loc
   before_action :find_user
 
-
   def index
-    # display index page
+   # @cities = City.visible.sorted #must be plural
+    @city = City.where(visible: true).first
   end
 
   def city
-  	@city = City.where(:permalink => params[:permalink], :visible => true).first
+  	@city = City.where(permalink: params[:permalink], visible: true).first
   	if @city.nil?
-  		redirect_to(:action => 'index')
+  		redirect_to(action: 'index')
   	else
   		#display the city content using city.html.erb
   	end
@@ -27,16 +26,16 @@ class PublicController < ApplicationController
 
   def state
     # public page showing state with all its cities
-    @state = State.where(:name => params[:name], :visible => true).first
+    @state = State.where(name: params[:name], visible: true).first
     if @state.nil?
-      redirect_to(:action => 'index')
+      redirect_to(action: 'index')
     else
       #display the state content using state.html.erb
     end
   end
 
   def new
-   # @loc = Loc.new({:city_id => @city.id, :name => "New Remote Location..."})
+   # @loc = Loc.new({city_id: @city.id, name: "New Remote Location..."})
    # @cities = @city.state.cities.sorted
    # @loc_count = Loc.count + 1
   end
@@ -45,9 +44,9 @@ class PublicController < ApplicationController
     @locs = Loc.new(loc_params)
     if @locs.save
       flash[:notice] = "Location has been submitted successfully"
-      redirect_to(:action => 'index')
+      redirect_to(action: 'index')
     else
-      redirect_to(:controller => 'access', :action => 'addLoc') # fix so that it render's new
+      redirect_to(controller: 'access', action: 'addLoc') # fix so that it render's new
       flash[:notice] = "Please don't leave any fields blank."
     end
   end

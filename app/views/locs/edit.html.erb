@@ -1,18 +1,18 @@
 <% @page_title = "Edit Location" %>
 
-<%= link_to("<< Back to List", {:action => 'index', :city_id => @city.id}, :class => 'back-link') %>
+<%= link_to("<< Back to List", {action: 'index', city_id: @city.id}, class: 'back-link') %>
 
 <div class="locs edit"> <!-- change from new -->
-	<h2>Update Location</h2><!-- change from new -->
+  <h2>Update Location</h2><!-- change from new -->
 
-	<%= form_for(:loc, :url => {:action => 'update', :id => @loc.id, :city_id => @city.id}) do |f| %> <!-- change from new -->
+  <%= form_for(:loc, url: {action: 'update', id: @loc.id, city_id: @city.id}) do |f| %> <!-- change from new -->
 
-	<!-- references partial _form -->
-	<%= render(:partial => "form", :locals => {:f => f}) %>
+  <!-- references partial _form -->
+  <%= render(partial: "form", locals: {f: f}) %>
 
-	<div class="form-buttons">
-		<%= submit_tag("Update Location") %><!-- change from new -->
-	</div>
+  <div class="form-buttons">
+    <%= submit_tag("Update Location") %><!-- change from new -->
+  </div>
 
-	<% end %>
+  <% end %>
 </div>

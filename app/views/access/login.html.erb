@@ -1,19 +1,19 @@
- <% @page_title = "Login" %>
+<% @page_title = "Login" %>
 
 <div class="inner_container_sap_login">
-	 <%= form_tag(:action => 'attempt_login') do %>
-	 	<%= error_messages_for(@user) %>
-	 	<!-- will send login to attempt login using attempt_login controller -->
+  <%= form_tag(action: 'attempt_login') do %>
+    <%= error_messages_for(@user) %>
+	<!-- will send login to attempt login using attempt_login controller -->
 
-		<!-- Username -->
-		<%= text_field :username, "", class: 'text_field_generic', :placeholder => "Username" %><br>
+	<!-- Username -->
+	<%= text_field :username, "", class: 'text_field_generic', placeholder: "Username" %><br>
 		
-		<!-- Password -->
-		<%= password_field_tag :password, "", class: 'text_field_generic', :placeholder => "Password" %><br>
+	<!-- Password -->
+	<%= password_field_tag :password, "", class: 'text_field_generic', placeholder: "Password" %><br>
 
-		<%= submit_tag "LOGIN", :class => "gen_button_prominent" %><br>
+	<%= submit_tag "LOGIN", class: "gen_button_prominent" %><br>
 
-	 <% end %>
+  <% end %>
 
-	 <p>Need to <%= link_to('sign up?', {:controller => 'users', :action => 'new'}) %> <!-- Forgot <a href="">Password?</a> --></p>
+  <p>Need to <%= link_to('sign up?', {controller: 'users', action: 'new'}) %> <!-- Forgot <a href="">Password?</a> --></p>
 </div>

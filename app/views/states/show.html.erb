@@ -1,28 +1,29 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %> 
+<br><br>
+<%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %> 
 <!-- back goes back to index to see ALL values -->
 <div class="states show">
-	<h2> Show State </h2>
+  <h2> Show State </h2>
 
-	<table summary="State detail view">
-		<tr>
-			<th>Name</th>
-			<td><%= @state.name %></td> 
-		</tr>
-		<tr>
-			<th>Position</th>
-			<td><%= @state.position %></td>
-		</tr>
-		<tr>
-			<th>Visible?</th>
-			<td><%= @state.visible ? 'true' : 'false' %></td>
-		</tr>
-		<tr>
-			<th>Created</th>
-			<td><%= @state.created_at %></td>
-		</tr>
-		<tr>
-			<th>Updated</th>
-			<td><%= @state.updated_at %></td>
-		</tr>
-	</table>
+  <table summary="State detail view">
+    <tr>
+      <th>Name</th>
+      <td><%= @state.name %></td> 
+    </tr>
+    <tr>
+      <th>Position</th>
+      <td><%= @state.position %></td>
+    </tr>
+    <tr>
+      <th>Visible?</th>
+      <td><%= @state.visible ? 'true' : 'false' %></td>
+    </tr>
+    <tr>
+      <th>Created</th>
+      <td><%= @state.created_at %></td>
+    </tr>
+    <tr>
+      <th>Updated</th>
+      <td><%= @state.updated_at %></td>
+    </tr>
+  </table>
 </div>

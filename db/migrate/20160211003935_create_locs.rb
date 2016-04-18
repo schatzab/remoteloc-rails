@@ -4,7 +4,7 @@ class CreateLocs < ActiveRecord::Migration
     	t.integer "city_id" # this is the foreign key
 	 	t.string "name"
 	 	t.integer "position"
-	 	t.boolean "visible", :default => false
+	 	t.boolean "visible", default: false
 	 	t.text "content" #the content itself
       	t.timestamps
     end

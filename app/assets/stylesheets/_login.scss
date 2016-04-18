@@ -1,38 +1,38 @@
 /* Login Styles */
 
 .standalone_login {
-	padding: 4em;      
-	width: 30%;
-	margin: 1em auto;  
-	position: relative; 
+  padding: 4em;      
+  width: 30%;
+  margin: 1em auto;  
+  position: relative; 
 } /* referenced on login_shell */
 
 /* Login text field */
 .text_field_generic {
-	color: $greyPrimary;
-	padding: 1.3em 1.3em;
-	border: 1px solid $primaryColor;
-	border-radius: 0.3em;
-	width: 23em;
-	font-size: 110%;
-	margin: 1em 0;
-	background: $greyLight;
+  color: $greyPrimary;
+  padding: 1.3em 1.3em;
+  border: 1px solid $primaryColor;
+  border-radius: 0.3em;
+  width: 23em;
+  font-size: 110%;
+  margin: 1em 0;
+  background: $greyLight;
 }
 .text_field_generic:focus { outline:none; }
 
 /* Login Button */
 .gen_button_prominent {
-	margin: 2em 1em 2em 0;
-	padding: 0.5em 1em;
-	border-radius: 7px;
-	border: 1px solid $primaryColor;
-	background-color: $primaryColor; 
-	float: left;
-	color: #ffffff;
-	font-weight: bold;
-	cursor: pointer;
-	min-width: 5em;
-	width: 25.5em;
-	height: 4.5em;
+  margin: 2em 1em 2em 0;
+  padding: 0.5em 1em;
+  border-radius: 7px;
+  border: 1px solid $primaryColor;
+  background-color: $primaryColor; 
+  float: left;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 5em;
+  width: 25.5em;
+  height: 4.5em;
 	}
 .gen_button_prominent:hover { background-color: $secondColor; }

@@ -1,18 +1,18 @@
 <% @page_title = "New Location" %>
 
-<%= link_to("<< Back to List", {:action => 'index', :city_id => @city.id}, :class => 'back-link') %>
+<%= link_to("<< Back to List", {action: 'index', city_id: @city.id}, class: 'back-link') %>
 
 <div class="locs new">
-	<h2>Create Remote Location</h2>
+  <h2>Create Remote Location</h2>
 
-	<%= form_for(:loc, :url => {:action => 'create', :city_id => @city.id}) do |f| %> 
+  <%= form_for(:loc, url: {action: 'create', city_id: @city.id}) do |f| %> 
 	
-	<!-- Partial Code Goes Here -->
-	<%= render(:partial => "form", :locals => {:f => f}) %>
+  <!-- Partial Code Goes Here -->
+  <%= render(partial: "form", locals: {f: f}) %>
 
-	<div class="form-buttons">
-		<%= submit_tag("Create Location") %>
-	</div>
+  <div class="form-buttons">
+    <%= submit_tag("Create Location") %>
+  </div>
 
-	<% end %>
+  <% end %>
 </div>

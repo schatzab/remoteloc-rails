@@ -1,12 +1,12 @@
- <% @page_title = "User Menu" %>
+<% @page_title = "User Menu" %>
 
- <nav class="inner_container_sap_admin">
- 	<h2> Admin User Menu</h2>
- 	<div class="identity"> Logged in as: <b><%= session[:username] %></b></div> <!-- will show our logged in username -->
- 	<div class="sap_lists">
- 		<%= link_to("Manage States", :controller => 'states') %><br>
- 		<%= link_to("Manage Users", :controller => 'users') %><br>
- 		<%= link_to("Manage Locations", :controller => 'locs', :action => 'all') %><br>
- 		<%= link_to("Logout", :action => 'logout') %><br>
- 	</div>
- </nav> 
+<nav class="inner_container_sap_admin">
+  <h2> Admin User Menu</h2>
+  <div class="identity"> Logged in as: <b><%= session[:username] %></b></div> <!-- will show our logged in username -->
+  <div class="sap_lists">
+    <%= link_to("Manage States", controller: 'states') %><br>
+    <%= link_to("Manage Users", controller: 'users') %><br>
+    <%= link_to("Manage Locations", controller: 'locs', action: 'all') %><br>
+    <%= link_to("Logout", action: 'logout') %><br>
+  </div>
+</nav> 

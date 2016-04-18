@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     unless session[:user_id] 
       # If there is no user_id then do this:
       flash[:notice] = "Please log in."
-      redirect_to(:controller => 'access', :action => 'login') # make sure to add in which controller holds the action "login" so the other controllers know where to find it.
+      redirect_to(controller: 'access', action: 'login') # make sure to add in which controller holds the action "login" so the other controllers know where to find it.
       return false 
       # *** halts the before_action IMPORTANT!
     else
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     unless session[:admin] 
       # If is not admin then do this:
       flash[:notice] = "You do not have sufficient access to visit this page."
-      redirect_to(:controller => 'public', :action => 'index') 
+      redirect_to(controller: 'public', action: 'index') 
       return false 
       # *** halts the before_action IMPORTANT!
     else

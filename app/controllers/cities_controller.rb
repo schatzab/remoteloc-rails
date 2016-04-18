@@ -10,7 +10,7 @@
   # confirmed admin before giving access
    
   def index
-    @cities = City.where(:state_id => @state.id).sorted 
+    @cities = City.where(state_id: @state.id).sorted 
     # @cities = @state.cities.sorted
   end
 
@@ -19,7 +19,7 @@
   end
 
   def new
-    @city = City.new({:state_id => @state.id, :name => "New City..."}) ##### :state_id => @state.name
+    @city = City.new({state_id: @state.id, name: "New City..."}) ##### state_id: @state.name
     @states = State.order('position ASC')
     @city_count = City.count + 1
   end
@@ -28,7 +28,7 @@
     @city = City.new(city_params)
     if @city.save
       flash[:notice] = "City has been created successfully."
-      redirect_to(:action => 'index', :state_id => @state.id)
+      redirect_to(action: 'index', state_id: @state.id)
     else
       render('new')
     end
@@ -42,7 +42,7 @@
     @city = City.find(params[:id])
     if @city.update_attributes(city_params) #the update is mass assigning so we use the same subject_params from below to safely insert into the database. if update succeeds
       flash[:notice] = "City updated successfully."
-      redirect_to(:action => 'show', :id => @city.id, :state_id => @state.id)
+      redirect_to(action: 'show', id: @city.id, state_id: @state.id)
     else
       @city_count = City.count
       render('edit') 
@@ -56,7 +56,7 @@
   def destroy
     city = City.find(params[:id]).destroy
     flash[:notice] = "City has been deleted."
-    redirect_to(:action => 'index', :state_id => @state.id)
+    redirect_to(action: 'index', state_id: @state.id)
   end
 
   private

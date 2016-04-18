@@ -10,7 +10,7 @@ class LocsController < ApplicationController
   # confirmed admin before giving access
 
   def index # shows locations according to their cities
-    @locs = Loc.where(:city_id => @city.id).sorted
+    @locs = Loc.where(city_id: @city.id).sorted
   end
 
   def all # shows all locations
@@ -22,7 +22,7 @@ class LocsController < ApplicationController
   end
 
   def new
-    @loc = Loc.new({:city_id => @city.id, :name => "New Remote Location...", :user_city => @loc.user_city})
+    @loc = Loc.new({city_id: @city.id, name: "New Remote Location...", user_city: @loc.user_city})
     @cities = @city.state.cities.sorted
     @loc_count = Loc.count + 1
   end
@@ -31,7 +31,7 @@ class LocsController < ApplicationController
     @locs = Loc.new(loc_params)
     if @locs.save
       flash[:notice] = "Location has been created successfully."
-      redirect_to(:action => 'index', :city_id => @city.id)
+      redirect_to(action: 'index', city_id: @city.id)
     else
       @loc_count = Loc.count + 1
       @cities = City.order('position ASC')
@@ -48,7 +48,7 @@ class LocsController < ApplicationController
     @loc = Loc.find(params[:id])
     if @loc.update_attributes(loc_params) #the update is mass assigning so we use the same subject_params from below to safely insert into the database. if update succeeds
       flash[:notice] = "Location updated successfully."
-      redirect_to(:action => 'show', :id => @loc.id, :city_id => @city.id)
+      redirect_to(action: 'show', id: @loc.id, city_id: @city.id)
     else
       @loc_count = Loc.count
       render('edit') 
@@ -64,7 +64,7 @@ class LocsController < ApplicationController
     @loc = Loc.find(params[:id])
     if @loc.update_attributes(loc_params) #the update is mass assigning so we use the same subject_params from below to safely insert into the database. if update succeeds
       flash[:notice] = "Location updated successfully."
-      redirect_to(:action => 'all', :id => @loc.id)
+      redirect_to(action: 'all', id: @loc.id)
     else
       @loc_count = Loc.count
       render('edit_pub') 
@@ -82,7 +82,7 @@ class LocsController < ApplicationController
   def destroy
     loc = Loc.find(params[:id]).destroy
     flash[:notice] = "Location has been deleted."
-    redirect_to(:action => 'index', :city_id => @city.id)
+    redirect_to(action: 'index', city_id: @city.id)
   end
 
   # destroy pending location
@@ -93,7 +93,7 @@ class LocsController < ApplicationController
   def destroy_pub
     loc = Loc.find(params[:id]).destroy
     flash[:notice] = "Location has been deleted."
-    redirect_to(:action => 'all')
+    redirect_to(action: 'all')
   end
 
   private

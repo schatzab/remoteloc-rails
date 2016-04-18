@@ -1,6 +1,6 @@
 class AddUserCityToLocs < ActiveRecord::Migration
   def up
-  	add_column "locs", "user_city", :string, :limit => 100
+  	add_column "locs", "user_city", :string, limit: 100
   end
 
   def down

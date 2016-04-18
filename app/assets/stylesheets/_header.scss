@@ -1,83 +1,64 @@
 /* Header */
 
 .header_container {
-	width: 100%;
- 	background-image: image-url('index_main.jpg');
+  width: 100%;
+  background-image: image-url('index_main.jpg');
 }
 .logo {
-	font-family: 'Oleo Script Swash Caps', cursive;
-	font-size: 350%;
-	color: $white;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 350%;
+  color: $white;
 }
 .logo a:active, .logo a:link, .logo a:visited { color: $white; text-decoration: none; } 
 .logo a:hover {  text-decoration: none; }
 /* Logo on Index Page */
 .logo_index {
-	font-family: 'Oleo Script Swash Caps', cursive;
-	font-size: 300%;
-	color: $primaryColor;
-	float: left;
-	margin: -0.3em 0 0em 0;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 300%;
+  color: $primaryColor;
+  float: left;
+  margin: -0.3em 0 0em 0;
 }
 .logo_index a:active, .logo_index a:link, .logo_index a:visited { color: $primaryColor; text-decoration: none; } 
 .logo_index a:hover {  text-decoration: none; }
 
-.inner_search_container {
-	text-align: center;
-	padding: 12em 0 3em 0;
-	width: 90%;
-	margin: 0 auto;
-}
-.inner_search_container h1 {
-	color: $white;
-	text-shadow: 1px 1px rgba(97, 97, 97, 0.4);
-	font-size: 300%;
-}
-.main_search_field {
-	border: 0px solid $white;
-	background-color: rgba(255, 255, 255, 0.9);
-	font-size: 130%;
-	padding: 0.8em 0.5em;
-	min-width: 18em;
-	outline: 0;
-}
 /* Header Nav Bar */
 #headerNav {
-	background-color: rgba(255, 255, 255, 0.8);
-	color: $white;
-	min-height: 4em; 	
-	position: fixed;
-	top: 0px;
-    left: 0px;
-    width: 100%;
-	z-index: 500;
-	padding-top: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: $white;
+  min-height: 4em; 	
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 500;
+  padding-top: 1em;
 }
 /* Scroll Classes */
 .headerLogoScroll { /* called with navScroll.js */
-	opacity: 0;
-	@extend .logo;
-	font-size: 200%;
+  opacity: 0;
+  @extend .logo;
+  font-size: 200%;
 }
 .header_action_container {
-	float: right;
+  float: right;
 }
 .header_spacing {
-	padding-left: 3em;
-	float: right;
+  padding-left: 3em;
+  float: right;
 }
 .header_icons {
-	font-size: 150%;
-	background-color: transparent;
-	border: 0px solid white;
-	color: $greyPrimary;
-	outline: 0;
+  font-size: 150%;
+  background-color: transparent;
+  border: 0px solid white;
+  color: $greyPrimary;
+  outline: 0;
 }
 .dropdown-menu li {
-	border-bottom: $greyLight 1px solid;
-	padding: 0.5em;
+  border-bottom: $greyLight 1px solid;
+  padding: 0.5em;
 }
 /* Don't show li class on last child */
 .dropdown-menu li:last-child {
-	border-bottom: $greyLight 0px solid;
+  border-bottom: $greyLight 0px solid;
 }

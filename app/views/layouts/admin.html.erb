@@ -1,13 +1,13 @@
 <!-- Header Partial -->
-<div id="header"><%= render(:partial => 'layouts/header') %></div>
+<div id="header"><%= render(partial: 'layouts/header') %></div>
 <br>
 <div id="main">
-	<div class="inner_container">
-		<!-- before yield -->
-		<%= yield %>
-		<!-- after yield -->
-	</div>
+  <div class="inner_container">
+    <!-- before yield -->
+    <%= yield %>
+    <!-- after yield -->
+    </div>
 </div>
 
 <!-- Footer Partial -->
-<div id="footer"><%= render(:partial => 'layouts/footer') %></div>
+<div id="footer"><%= render(partial: 'layouts/footer') %></div>

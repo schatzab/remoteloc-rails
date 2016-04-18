@@ -1,4 +1,4 @@
- class StatesController < ApplicationController
+class StatesController < ApplicationController
 
   layout "admin"
 
@@ -17,7 +17,7 @@
 
   def new
     @state_count = State.count + 1
-    @state = State.new({:name => "Default"})
+    @state = State.new({name: "Default"})
   end
 
   def create
@@ -25,7 +25,7 @@
     # instantiate a new object using parameters
     if @state.save # if saved, redirect to index
       flash[:notice] = "State created successfully."
-      redirect_to(:action => 'index')
+      redirect_to(action: 'index')
     else # if not saved, show form again
       @state_count = State.count + 1
       render('new')
@@ -44,7 +44,7 @@
     #update the object
     if @state.update_attributes(state_params) #the update is mass assigning so we use the same subject_params from below to safely insert into the database. if update succeeds
       flash[:notice] = "State updated successfully."
-      redirect_to(:action => 'show', :id => @state.id)
+      redirect_to(action: 'show', id: @state.id)
     # Third, redirect to a page (such as index)
     else
       @state_count = State.count
@@ -60,7 +60,7 @@
   def destroy
     state = State.find(params[:id]).destroy #don't need instance variable here as we'll never display a destroy.html.erb page which might need the instance variable
     flash[:notice] = "The state #{state.name} was deleted successfully."
-    redirect_to(:action => 'index')
+    redirect_to(action: 'index')
   end
 
   private

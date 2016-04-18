@@ -5,7 +5,7 @@ class AddPasswordDigestToUsers < ActiveRecord::Migration
   end
 
   def down
-    add_column "users", "password", :string, :limit => 40
+    add_column "users", "password", :string, limit: 40
   	remove_column "users", "password_digest"
   end
 end

@@ -2,24 +2,24 @@
 
 <!-- Breadcrumbs -->
 <ul class="breadcrumb loc_each_breadcrumb">
-	<!-- State -->
-	<li><%= link_to("#{@city.state.name}", {:action => 'state', :city_id => @city.id, :name => @city.state.name}) %></li>
-	<!-- Current -->
-	<li><%= @city.name %></li>
+  <!-- State -->
+  <li><%= link_to("#{@city.state.name}", {action: 'state', city_id: @city.id, name: @city.state.name}) %></li>
+  <!-- Current -->
+  <li><%= @city.name %></li>
 </ul>
 
 <h2><%= @city.name %></h2>
 
 <% @city.locs.visible.sorted.each do |loc| %>
-	<div class="loc_each_container">
-		<!-- Right here we'd sanitize content if sent through HTML - didn't add in content type.  See original files for this. ct -->
-		<div class="loc_each_container_L">
-			<b><%= loc.name %></b><br>
-			<%= loc.content %>
-		</div>
+  <div class="loc_each_container">
+  <!-- Right here we'd sanitize content if sent through HTML - didn't add in content type.  See original files for this. ct -->
+    <div class="loc_each_container_L">
+      <b><%= loc.name %></b><br>
+      <%= loc.content %>
+    </div>
 
-		<div class="loc_each_container_R">
-			<%= link_to("View Location", {:action => 'each', :id => loc.id, :city_id => @city.id}, :class => 'btn btn-success primaryButton') %> 
-		</div>
-	</div>
+    <div class="loc_each_container_R">
+      <%= link_to("View Location", {action: 'each', id: loc.id, city_id: @city.id}, class: 'btn btn-success primaryButton') %> 
+    </div>
+  </div>
 <% end %>

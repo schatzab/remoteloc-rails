@@ -1,18 +1,18 @@
 <% @page_title = "Edit User: #{@user.name}" %>
 
-	<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %> <!-- no need to specify controller as our action is index. -->
+  <%= link_to("<< Back to List", {action: 'index'}, class: 'back-link') %> <!-- no need to specify controller as our action is index. -->
 
-	<div class="user edit"> 
-		<h2>Edit User <%= "#{@user.name}" %></h2> <!-- i added in the extention of the title -->
+  <div class="user edit"> 
+    <h2>Edit User <%= "#{@user.name}" %></h2> <!-- i added in the extention of the title -->
 
-		<%= form_for(:user, :url => {:action => 'update', :id => @user.id}) do |f| %> <!-- open the form.  user action update to which needs to pass the user id first -->
+    <%= form_for(:user, url: {action: 'update', id: @user.id}) do |f| %> <!-- open the form.  user action update to which needs to pass the user id first -->
 
-		<%= render(:partial => 'form', :locals => {:f => f} ) %>
-		<!-- shows the partial _form.html.erb in same directory.  lets us use a local variable called f like "this" -->
+    <%= render(partial: 'form', locals: {f: f} ) %>
+    <!-- shows the partial _form.html.erb in same directory.  lets us use a local variable called f like "this" -->
 
-		<div class="form-buttons">
-			<%= submit_tag('Update User') %>
-			<!-- this is the submit button -->
-		<div>
-	<% end %>
+    <div class="form-buttons">
+      <%= submit_tag('Update User') %>
+      <!-- this is the submit button -->
+    <div>
+  <% end %>
 </div>

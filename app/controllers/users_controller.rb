@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
   layout 'sap'
 
-  before_action :confirm_logged_in, :except => [:new, :create]
+  before_action :confirm_logged_in, except: [:new, :create]
   # we run confirm_logged_in before all actions except for our login/logout actions.  (see private in application_controller.rb)
-  before_action :confirm_admin, :except => [:new, :create] 
+  before_action :confirm_admin, except: [:new, :create] 
   # confirmed admin before giving access
 
 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     if @user.save # if were able to save, then follow these steps:
       flash[:notice] = 'User created.'
       # redirect new user:      
-      redirect_to(:action => 'index')
+      redirect_to(action: 'index')
     else
       render("new") # show the page new.html.erb
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     # find the user and if we can update it, then redirect accordingly
     if @user.update_attributes(user_params)
       flash[:notice] = 'User updated.'
-      redirect_to(:action => 'index')
+      redirect_to(action: 'index')
     else
       render("edit")
     end
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy # find and destroy all in one step, give flash then redirect
     flash[:notice] = "The user had been deleted."
-    redirect_to(:action => 'index')
+    redirect_to(action: 'index')
   end
 
   private # private will not be included as one of our actions but can be referenced above as white listed insertions into the database.  Will need to be updates if I want different values in my forms.
@@ -61,4 +61,3 @@ class UsersController < ApplicationController
       params.require(:user).permit(:first_name, :last_name, :email, :username, :password)
     end
 end
- 

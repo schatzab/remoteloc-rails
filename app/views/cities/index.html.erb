@@ -1,40 +1,39 @@
-
 <% @page_title = "Cities" %> <!-- note that it's not being output with = after % -->
 
-<%= link_to("<< Back to States", {:controller => 'states', :action => 'index'}, :class => 'back-link') %> 
+<%= link_to("<< Back to States", {controller: 'states', action: 'index'}, class: 'back-link') %> 
 
 <div class="cities index"> <!-- This is just a CSS convention showing controller(city)/action(index) -->
-	<h2>Cities in <%= @state.name %></h2>
+  <h2>Cities in <%= @state.name %></h2>
 
-	<%= link_to("+ add new city", {:action => 'new', :state_id => @state.id}, :class => 'primaryButtonAdmin') %> 
+  <%= link_to("+ add new city", {action: 'new', state_id: @state.id}, class: 'primaryButtonAdmin') %> 
 
-	<div><b><%= pluralize(@cities.size, 'city') %> found</b></div><!-- list how many cities we have -->
+  <div><b><%= pluralize(@cities.size, 'city') %> found</b></div><!-- list how many cities we have -->
 
-	<table summary="City list">
-		<tr class="table_head">
-			<th>&nbsp;</th>
-			<th>City</th>
-			<th>City ID</th>
-			<th>Permalink</th>
-			<th>Visible</th>
-			<th>Locations</th>
-			<th>Actions</th>
-		</tr>
-		<% @cities.each do |city| %>
-		<tr class="table_content">
-			<td><%= city.position %></td>
-			<td><%= city.name %></td>
-			<td><%= city.id %></td>
-			<td><%= city.permalink  %></td>
-			<td class="center"><%= city.visible ? 'true' : 'false' %></td>
-			<td class="center"><%= city.locs.size %></td>
-			<td class="actions">
-				<%= link_to("View Locations", {:controller => 'locs', :city_id => city.id}, :class => 'action show') %>  <!-- send city id to locs -->
-				<%= link_to("Show", {:action => 'show', :id => city.id, :state_id => @state.id}, :class => 'action show') %> 
-				<%= link_to("Edit", {:action => 'edit', :id => city.id, :state_id => @state.id}, :class => 'action edit') %>
-				<%= link_to("Delete", {:action => 'delete', :id => city.id, :state_id => @state.id}, :class => 'action delete') %>
-			</td>
-		</tr>
-		<% end %>
-	</table>
+  <table summary="City list">
+    <tr class="table_head">
+      <th>&nbsp;</th>
+      <th>City</th>
+      <th>City ID</th>
+      <th>Permalink</th>
+      <th>Visible</th>
+      <th>Locations</th>
+      <th>Actions</th>
+    </tr>
+    <% @cities.each do |city| %>
+      <tr class="table_content">
+        <td><%= city.position %></td>
+        <td><%= city.name %></td>
+        <td><%= city.id %></td>
+        <td><%= city.permalink  %></td>
+        <td class="center"><%= city.visible ? 'true' : 'false' %></td>
+        <td class="center"><%= city.locs.size %></td>
+        <td class="actions">
+          <%= link_to("View Locations", {controller: 'locs', city_id: city.id}, class: 'action show') %>  <!-- send city id to locs -->
+            <%= link_to("Show", {action: 'show', id: city.id, state_id: @state.id}, class: 'action show') %> 
+            <%= link_to("Edit", {action: 'edit', id: city.id, state_id: @state.id}, class: 'action edit') %>
+            <%= link_to("Delete", {action: 'delete', id: city.id, state_id: @state.id}, class: 'action delete') %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>

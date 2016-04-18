@@ -1,28 +1,28 @@
- <% @page_title = "Add Location" %>
+<% @page_title = "Add Location" %>
 
 <div class="inner_container_sap_login"> 
-		<h4><b>Add a remote work location.</b></h4>
+  <h4><b>Add a remote work location.</b></h4>
 
-		<%= form_for(:loc, :url => {:controller => 'public', :action => 'create'}) do |f| %> 
-		<%= error_messages_for(@loc) %>
-		<!-- This will display my error messages -->
+  <%= form_for(:loc, url: {controller: 'public', action: 'create'}) do |f| %> 
+  <%= error_messages_for(@loc) %>
+  <!-- This will display my error messages -->
 
-		<div summary="Loc form fields">
-			<!-- Loc Name -->
-			<%= f.text_field(:name, class: "text_field_generic", :placeholder => "* Remote location name") %><br>
-			<!-- Loc Content -->
-			<%= f.text_field(:content, class: "text_field_generic", :placeholder => "* A short description...") %><br>
-			<!-- City -->
-			<%= f.text_field(:user_city, class: "text_field_generic", :placeholder => "* City or Zip Code") %><br>
-		</div>
+  <div summary="Loc form fields">
+  <!-- Loc Name -->
+  <%= f.text_field(:name, class: "text_field_generic", placeholder: "* Remote location name") %><br>
+	<!-- Loc Content -->
+	<%= f.text_field(:content, class: "text_field_generic", placeholder: "* A short description...") %><br>
+	<!-- City -->
+	<%= f.text_field(:user_city, class: "text_field_generic", placeholder: "* City or Zip Code") %><br>
+  </div>
 
-		<div class="form-buttons">
-			<%= submit_tag "ADD LOCATION", :class => "gen_button_prominent" %>
-		</div>
-	<% end %>
+  <div class="form-buttons">
+    <%= submit_tag "ADD LOCATION", class: "gen_button_prominent" %>
+	</div>
+<% end %>
 
-	<p>
-		* Your location submission will be reviewed by Remote Loc moderators. Your Loc should be viewable shortly.<br>
-		<%= link_to('Do you own this location?', {:controller => 'access', :action => 'login'}) %>
-	</p>
+<p>
+  * Your location submission will be reviewed by Remote Loc moderators. Your Loc should be viewable shortly.<br>
+  <%= link_to('Do you own this location?', {controller: 'access', action: 'login'}) %>
+</p>
 </div>

@@ -1,15 +1,15 @@
 <% @page_title = "Delete City" %>
 
-<%= link_to("<< Back to List", {:action => 'index', :state_id => @state.id}, :class => 'back-link') %>
+<%= link_to("<< Back to List", {action: 'index', state_id: @state.id}, class: 'back-link') %>
 
 <div class="states delete">
-	<h2> Delete City</h2>
+  <h2> Delete City</h2>
 
-	<%= form_for(:city, :url => {:action => 'destroy', :id => @city.id, :state_id => @state.id}) do |f| %>
-		<p> Are you sure you want to permanently delete this city?</p>
-		<p class="reference-name"><%= @city.name %></p>
-		<div class="form-buttons">
-			<%= submit_tag("Delete City") %>
-		</div>
-	<% end %>
+  <%= form_for(:city, url: {action: 'destroy', id: @city.id, state_id: @state.id}) do |f| %>
+    <p> Are you sure you want to permanently delete this city?</p>
+    <p class="reference-name"><%= @city.name %></p>
+    <div class="form-buttons">
+      <%= submit_tag("Delete City") %>
+    </div>
+  <% end %>
 </div>

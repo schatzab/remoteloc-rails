@@ -2,34 +2,34 @@
 
 <!-- Breadcrumbs -->
 <ul class="breadcrumb loc_each_breadcrumb">
-	<!-- State -->
-	<li><%= link_to("#{@city.state.name}", {:action => 'state', :city_id => @city.id, :name => @city.state.name}) %></li>
-	<!-- City --> 	
-	<li class="active"><%= link_to("#{@loc.city.name}", {:action => 'city', :permalink => @city.permalink}) %></li>
-	<!-- Current -->
-	<li><%= @loc.name %></li>
+  <!-- State -->
+  <li><%= link_to("#{@city.state.name}", {action: 'state', city_id: @city.id, name: @city.state.name}) %></li>
+  <!-- City --> 	
+  <li class="active"><%= link_to("#{@loc.city.name}", {action: 'city', permalink: @city.permalink}) %></li>
+  <!-- Current -->
+  <li><%= @loc.name %></li>
 </ul>
 
 <!-- back goes back to index to see ALL values -->
 <div class="locs city loc_each_container">
-	<h2><%= @loc.name %></h2>
+  <h2><%= @loc.name %></h2>
 
-	<table summary="Loc detail view">
-		<tr>
-			<th>Content</th>
-			<td><%= @loc.content %></td> 
-		</tr>
-		<tr>
-			<th>Website</th>
-			<td><%= link_to("#{@loc.name} Website", "#{@loc.website}", :class => 'back-link', :target => "_blank") %></td> 
-		</tr>
-		<tr>
-			<th>Phone</th>
-			<td><a href="tel:<%= @loc.phone %>"><%= @loc.phone %></a></td> 
-		</tr>
-		<tr>
-			<th>Address</th>
-			<td><%= @loc.address %></td> 
-		</tr>
-	</table>
+  <table summary="Loc detail view">
+    <tr>
+      <th>Content</th>
+      <td><%= @loc.content %></td> 
+    </tr>
+    <tr>
+      <th>Website</th>
+      <td><%= link_to("#{@loc.name} Website", "#{@loc.website}", class: 'back-link', target: "_blank") %></td> 
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td><a href="tel:<%= @loc.phone %>"><%= @loc.phone %></a></td> 
+    </tr>
+    <tr>
+      <th>Address</th>
+      <td><%= @loc.address %></td> 
+    </tr>
+  </table>
 </div>

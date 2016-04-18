@@ -1,7 +1,7 @@
 class CreateCitiesUsersJoin < ActiveRecord::Migration
   def change
   	# make sure to surpress the id
-    create_table :cities_users, :id => false do |t|
+    create_table :cities_users, id: false do |t|
     	t.integer "city_id"
     	t.integer "user_id"
     end

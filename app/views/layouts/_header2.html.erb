@@ -1,14 +1,11 @@
 
 <!-- Header Panel -->
 <header class="header_container"> <!-- 90% width -->
+  <!-- Search -->
+  <div class="inner_search_container">
+  <h1>Find a location to work remotely</h1>
 
-	<!-- Search -->
-	<div class="inner_search_container">
-		<h1>Find a location to work remotely</h1>
-		<%= form_tag("/search", method: "get") do %>
-			<%= text_field_tag(:q, "", :placeholder => "Enter a city...", :class => "main_search_field") %>
-			<%= button_tag(type: "submit", :class => "glyphicon glyphicon-search main_search_button") do %>
-			<% end %>
-		<% end %>
-	</div>
+  <%= select("post", "", City.visible {|p| [ p.City.permalink] }, {include_blank: 'Select a City'}) %>
+
+  </div>
 </header>

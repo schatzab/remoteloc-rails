@@ -1,44 +1,44 @@
 <%= error_messages_for(@loc) %>
 <!-- we need something to reference f, this is done on the primary page where this _form is plugged into -->
 <table summary="Loc form fields">
-	<tr>
-		<th><%= f.label(:name, "Name *") %></th>
-		<td><%= f.text_field(:name) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:city_id, "City ID") %></th>
-		<td><%= f.text_field(:city_id) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:user_city, "User Input City") %></th>
-		<td><%= f.text_field(:user_city) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:address) %></th>
-		<td><%= f.text_field(:address) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:phone) %></th>
-		<td><%= f.text_field(:phone) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:website) %></th>
-		<td><%= f.text_field(:website) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:position) %></th>
-		<td><%= f.text_field(:position) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:visible, "Visible?") %></th>
-		<td><%= f.check_box(:visible) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:content, "Content *") %></th>
-		<td><%= f.text_field(:content) %></td>
-	</tr>
-	<tr>
-		<th><%= f.label(:created_at) %></th>
-		<td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td> <!-- don't actually use this, just example -->
-	</tr> 
+  <tr>
+    <th><%= f.label(:name, "Name *") %></th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:city_id, "City ID") %></th>
+    <td><%= f.text_field(:city_id) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:user_city, "User Input City") %></th>
+    <td><%= f.text_field(:user_city) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:address) %></th>
+    <td><%= f.text_field(:address) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:phone) %></th>
+    <td><%= f.text_field(:phone) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:website) %></th>
+    <td><%= f.text_field(:website) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.text_field(:position) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:visible, "Visible?") %></th>
+    <td><%= f.check_box(:visible) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:content, "Content *") %></th>
+    <td><%= f.text_field(:content) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:created_at) %></th>
+    <td><%= f.datetime_select(:created_at, order: [:month, :day, :year]) %></td> <!-- don't actually use this, just example -->
+  </tr> 
 </table>

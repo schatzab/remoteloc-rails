@@ -1,0 +1,25 @@
+#search {
+  width: 100%;
+  background-color: $secondColor;
+  text-align: center;
+  padding: 0 0 2em 0;
+}
+.inner_search_container {
+  text-align: center;
+  padding: 12em 0 3em 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.inner_search_container h1 {
+  color: $white;
+  text-shadow: 1px 1px rgba(97, 97, 97, 0.4);
+  font-size: 300%;
+}
+.main_search_field {
+  border: 0px solid $white;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 130%;
+  padding: 0.8em 0.5em;
+  min-width: 18em;
+  outline: 0;
+}

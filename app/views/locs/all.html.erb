@@ -1,47 +1,47 @@
 <% @page_title = "Locations List" %>
 
-<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'index'}, :class => 'back-link') %> <!-- go to the access controller and on that page use the index action (which shows index.html.erb) -->
+<%= link_to("<< Back to Menu", {controller: 'access', action: 'index'}, class: 'back-link') %> <!-- go to the access controller and on that page use the index action (which shows index.html.erb) -->
 
 <div class="inner_container_sap_users"> 
-	<h2>Manage All Locations</h2>
+  <h2>Manage All Locations</h2>
 
-	<%#= link_to("+ add new location", :action => 'new', :class => 'primaryButtonAdmin') %> 
+  <%#= link_to("+ add new location", action: 'new', class: 'primaryButtonAdmin') %> 
 
-	<div><%= pluralize(@locs.size, 'loc') %> found</div> <!-- List how many Locations we have -->
+  <div><%= pluralize(@locs.size, 'loc') %> found</div> <!-- List how many Locations we have -->
 
-	<table summary="Locations list"  class="inner_container_sap_users">
-		<tr class="table_head">
-			<th>Name</th>
-			<th>city_id</th> 
-			<th>User Input City</th> 
-			<th>Position</th>
-			<th>Visible?</th>
-			<th>Actions</th>
-		</tr>
-		<% @locs.each do |loc| %> 
-		<!-- loop through users -->
-		<tr class="table_content"> 
-			<td><%= loc.name %></td> <!-- name method in models > admin_users.rb -->			
-			<td><%= loc.city_id %></td>
-			<td><%= loc.user_city %></td> <!-- City name or Zip provided by user -->
-			<td><%= loc.position %></td>
-			<td class="center">
-				<% if loc.visible == false %>
-					<%= link_to("Pending", {:action => 'pending', :id => loc.id, :city_id => loc.city_id}) %>
-				<% else %>
-					<%= "yes" %>
-				<% end %>
-			</td> 
-			<td>
-				<% if loc.city_id.present? %>
-					<%= link_to("Edit", {:action => 'edit_pub', :id => loc.id, :city_id => loc.try(:city_id)}) %>
-					<%= link_to("Delete", {:action => 'delete_pub', :id => loc.id, :city_id => loc.try(:city_id)}) %>
-				<% else %>
-					  <%= link_to("Edit", {:action => 'edit_pub', :id => loc.id}) %>
-					  <%= link_to("Delete", {:action => 'delete_pub', :id => loc.id}) %>
-				<% end %> 
-			</td>
-		</tr>
-		<% end %>
-	</table>
+  <table summary="Locations list"  class="inner_container_sap_users">
+    <tr class="table_head">
+      <th>Name</th>
+      <th>city_id</th> 
+      <th>User Input City</th> 
+      <th>Position</th>
+      <th>Visible?</th>
+      <th>Actions</th>
+    </tr>
+    <% @locs.each do |loc| %> 
+    <!-- loop through users -->
+    <tr class="table_content"> 
+      <td><%= loc.name %></td> <!-- name method in models > admin_users.rb -->			
+      <td><%= loc.city_id %></td>
+      <td><%= loc.user_city %></td> <!-- City name or Zip provided by user -->
+      <td><%= loc.position %></td>
+      <td class="center">
+        <% if loc.visible == false %>
+          <%= link_to("Pending", {action: 'pending', id: loc.id, city_id: loc.city_id}) %>
+        <% else %>
+          <%= "yes" %>
+        <% end %>
+      </td> 
+      <td>
+        <% if loc.city_id.present? %>
+          <%= link_to("Edit", {action: 'edit_pub', id: loc.id, city_id: loc.try(:city_id)}) %>
+          <%= link_to("Delete", {action: 'delete_pub', id: loc.id, city_id: loc.try(:city_id)}) %>
+        <% else %>
+          <%= link_to("Edit", {action: 'edit_pub', id: loc.id}) %>
+          <%= link_to("Delete", {action: 'delete_pub', id: loc.id}) %>
+        <% end %> 
+      </td>
+    </tr>
+    <% end %>
+  </table>
 </div>

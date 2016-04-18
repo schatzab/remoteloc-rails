@@ -11,10 +11,10 @@ $alertRed: #FA0C1C;
 $alertGreen: #6bac4e;
 
 body { 
-	color: $greyPrimary; 
-	background-color: $greyLight;
-	font-family: 'Catamaran', sans-serif, Verdana;
-	width: 100%; 
+  color: $greyPrimary; 
+  background-color: $greyLight;
+  font-family: 'Catamaran', sans-serif, Verdana;
+  width: 100%; 
 }
 html { overflow-y: scroll; }
 
@@ -50,7 +50,7 @@ h2 { color: $primaryColor; }
 }
 
 @import 'header';
-@import 'search';
+@import 'forms';
 @import 'buttons';
 @import 'images';
 @import 'content';

@@ -1,12 +1,12 @@
 <% if object && object.errors.size > 0 %> <!-- if there is an object and there is 1 or more errors... -->
 <div id="errorExplanation">
-<!-- 	<h2><%#= pluralize(object.errors.size, "error") %> uses pluralization to show either 1 error or many errors
-		prohibited this record from being saved<h2> -->
-		<p>There was a problem with the following fields:</p>
-		<ul>
-			<% object.errors.full_messages.each do |msg| %> <!-- will list the full messages for each of the errors -->
-			<li><%= msg %></li>
-			<% end %>
-		</ul>
-	</div>
+<!--<h2><%#= pluralize(object.errors.size, "error") %> uses pluralization to show either 1 error or many errors
+	prohibited this record from being saved<h2> -->
+  <p>There was a problem with the following fields:</p>
+	<ul>
+     <% object.errors.full_messages.each do |msg| %> <!-- will list the full messages for each of the errors -->
+	 <li><%= msg %></li>
+	<% end %>
+	</ul>
+  </div>
 <% end %>
