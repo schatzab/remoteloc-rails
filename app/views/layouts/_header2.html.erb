@@ -5,12 +5,14 @@
   <div class="inner_search_container">
   <h1>Find a location to work remotely</h1>
 
-  <%#= select("post", "", @cities.name, {include_blank: 'Select a City'}) %>
-  <%= collection_select(:city_id, 0, City.visible, :id, :name) %>
+<!-- Primary Selection Tool -->
+<select onchange="window.location=this.value" class="main_search_field">
+	<option>Select a City</option>
+	<% @cities.each do |c| %> 
+		<option value="city/<%= c.permalink %>"><%= c.name %></option>
+	<% end %>
+</select>
 
-  <%# @cities.each do |c| %> 
-    <%#= c.name %>
-  <%# end %>
 
   </div>
 </header>

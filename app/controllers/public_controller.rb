@@ -1,17 +1,16 @@
 class PublicController < ApplicationController
   
-  layout :index_or_public # a conditional layout (see below)
+  layout :index_or_public # conditional layout (see below)
 
   before_action :setup_navigation 
-  #see bottom, setup for all actions on this page
+  #see bottom setup 
   before_action :find_state
-  # access to state, city, loc, user
   before_action :find_city
   before_action :find_loc
   before_action :find_user
 
   def index
-    @cities = City.order("cities.id ASC").where(visible: true)
+    @cities = City.order("cities.name ASC").where(visible: true)
   end
 
   def city
