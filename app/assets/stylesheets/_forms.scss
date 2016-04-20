@@ -18,8 +18,21 @@
 .main_search_field {
   border: 0px solid $white;
   background-color: rgba(255, 255, 255, 0.9);
-  font-size: 130%;
+  font-size: 120%;
   padding: 0.8em 0.5em;
-  min-width: 18em;
+  min-width: 20%;
   outline: 0;
+}
+.index_select {
+  position: relative;  
+  padding: 3em; /* used as a place holder */
+}
+.index_select select {
+  position: absolute;
+  top: 1em;
+  left: 40%;
+  z-index: 0;
+}
+.selectOpen {
+  z-index: 9;
 }
