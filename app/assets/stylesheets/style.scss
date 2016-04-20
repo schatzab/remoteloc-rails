@@ -9,6 +9,7 @@ $greyLight: #f5f5f5;
 $greyPrimary: #777777;
 $alertRed: #FA0C1C;
 $alertGreen: #6bac4e;
+$lime: #B8F716;
 
 body { 
   color: $greyPrimary; 
@@ -21,6 +22,10 @@ html { overflow-y: scroll; }
 a:active, a:link, a:visited { color: $primaryColor; text-decoration: none; } 
 a:hover {  color: $secondColor; text-decoration: none; }
 h2 { color: $primaryColor; }
+
+/* highlight text */
+::-moz-selection { color: $lime; }
+::selection { color: $lime; }
 
 .inner_container {
   width: 90%;
