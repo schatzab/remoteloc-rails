@@ -16,8 +16,10 @@
   </div>
 </header>
 
+<!-- pulldown script -->
 <script>
 document.getElementById('menu').addEventListener('click', onClickHandler);
+document.getElementById('menu').addEventListener('touchmove', onClickHandler);
 document.getElementById('menu').addEventListener('mousedown', onMouseDownHandler);
 
 function onMouseDownHandler(e){

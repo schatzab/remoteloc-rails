@@ -14,7 +14,7 @@ class PublicController < ApplicationController
   end
 
   def city
-  	@city = City.where(permalink: params[:permalink], visible: true).first
+  	@city = City.order("cities.name ASC").where(permalink: params[:permalink], visible: true).first
   	if @city.nil?
   		redirect_to(action: 'index')
   	else
