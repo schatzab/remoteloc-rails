@@ -1,67 +1,159 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
-  <p>Return <a href="/">Home</a>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
-
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
-</head>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Remote Locations" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Remote Loc | 422</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:400,800' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </head>
 <body>
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
-    </div>
+
+<style>
+body { 
+  color: $777777; 
+  background-color: $f5f5f5;
+  font-family: 'Catamaran', sans-serif, Verdana;
+  width: 100%; 
+}
+a:active, a:link, a:visited { color: $117B9E; text-decoration: none; } 
+a:hover {  color: $38C4F2; text-decoration: none; }
+h2 { color: $117B9E; }
+/* highlight text */
+::-moz-selection { color: $ACDE2C; }
+::selection { color: $ACDE2C; }
+.inner_container {
+  width: 90%;
+  margin: 0 auto;
+}
+.hidden { display: none; }
+/* Header */
+.header_container {
+  width: 100%;
+  background-image: url('index_main.jpg');
+}
+.logo {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 350%;
+  color: $white;
+}
+.logo a:active, .logo a:link, .logo a:visited { color: $white; text-decoration: none; } 
+.logo a:hover {  text-decoration: none; }
+/* Logo on Index Page */
+.logo_index {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 300%;
+  color: $primaryColor;
+  float: left;
+  margin: -0.3em 0 0em 0;
+}
+.logo_index a:active, .logo_index a:link, .logo_index a:visited { color: $primaryColor; text-decoration: none; } 
+.logo_index a:hover {  text-decoration: none; }
+
+/* Header Nav Bar */
+#headerNav {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: $ffffff;
+  min-height: 4em;  
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 500;
+  padding-top: 1em;
+}
+.inner_search_container {
+  text-align: center;
+  padding: 12em 0 3em 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.inner_search_container h1 {
+  color: $white;
+  text-shadow: 1px 1px rgba(97, 97, 97, 0.4);
+  font-size: 300%;
+}
+/*Footer*/
+.inner_container_footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $ffffff;   
+}
+.footer { 
+  text-align: center;
+  height: 3em; 
+  width: 90%;
+  margin: 0 auto;
+  background: $ffffff; 
+  padding: 5em 0 3em 0; 
+}
+.footer_links {
+  display: flex; /* equidistant boxes */
+  flex-wrap: wrap; /* equidistant boxes */
+  margin: 5em auto;
+  justify-content: space-between;
+  width: 70%;
+}
+.heart { 
+  color: $38C4F2;
+  font-weight: bold;
+}
+.loc_each_container_index {
+  background-color: $ffffff;
+  border-radius: 7px;
+  padding: 2em 2em;
+  margin-bottom: 1em;
+  overflow: hidden;
+  margin-bottom: 5em;
+}
+</style>
+
+<!-- Top Nav Bar -->  
+<nav id="headerNav"> <!-- 100% width -->
+  <div class="inner_container"> <!-- 90% width -->
+    <!-- Logo -->
+    <div class="logo_index"><a href="/">Remote Loc</a></div>   
   </div>
-</body>
+</nav>
+<!-- Header Panel -->
+<header class="header_container"> <!-- 90% width -->
+  <!-- Search -->
+  <div class="inner_search_container">
+    <div style="color: white; font-size: 250%">Find a location to work remotely</div>
+  </div>
+</header>
+
+
+<div class="loc_each_container_index">
+  <h2>Sorry the change you wanted was denied.  Maybe you didn't have access to it. <a href="/">Try here instead</a>!</h2>
+</div>
+
+
+
+<!-- Footer -->
+    <footer class="inner_container_footer">
+    <div class="footer">
+    <div class="footer_links">
+        </div>
+        <p>Made with <span class="heart">&#9825;</span> in Bend, Oregon &copy; 2016</p>  
+      </div>  
+    </footer>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-76755750-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
+  </body>
 </html>
