@@ -5,9 +5,9 @@
 <% @state.cities.visible.sorted.each do |city| %>
   <div class="loc_each_container">
   <!-- Right here we'd sanitize content if sent through HTML - didn't add in content type.  See original files for this. ct -->
-    <div class="loc_each_container_L"><b><%= city.name %></b><br>
+    <div class="loc_each_state_container_L"><b><%= city.name %></b><br>
     </div>
-    <div class="loc_each_container_R">
+    <div class="loc_each_state_container_R">
       <%= link_to("View City", {action: 'city', id: city.id, state_id: @state.id, permalink: city.permalink}, class: 'primaryButton') %>
     </div>
   </div>

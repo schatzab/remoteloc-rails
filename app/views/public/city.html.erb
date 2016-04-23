@@ -13,12 +13,12 @@
 <% @city.locs.visible.sorted.each do |loc| %>
   <div class="loc_each_container">
 
-    <div class="loc_each_container_L">
+    <div class="loc_each_city_container_L">
       <b><%= loc.name %></b><br>
       <%= loc.content %>
     </div>
 
-    <div class="loc_each_container_R">
+    <div class="loc_each__city_container_R">
       <%= link_to("View Location", {action: 'each', id: loc.id, city_id: @city.id}, class: 'btn btn-success primaryButton') %> 
     </div>
   </div>

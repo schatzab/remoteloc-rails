@@ -1,74 +1,5 @@
 /* Primary Content Section */
 
-#main { 
-  padding: 4em 0 2em 0;
-  min-height: 30em; 
-  background: $greyLight; 
-}
-.main_cta { /* call to action on index */
-  text-align: center;
-  padding: 3em 0 5em 0;
-}
-#main h1 {
-  text-align: center;
-  color: $primaryColor;
-}
-#main h3 {
-  line-height: 2;
-  padding: 0 3em;
-  font-size: 150%;
-}
-.index_images_container {
-  display: flex; /* equidistant boxes */
-  flex-wrap: wrap; /* equidistant boxes */
-  align-items: center; /* equidistant boxes */
-  justify-content: space-between;
-  width: 90%;
-  margin: 0 auto;
-}
-.index_city_boxes {
-  border: 1px $white solid; 
-  @include border-radius(7px);
-  padding: 5em; 
-  display: inline-block;
-  margin: 2em; 
-  width: 260px;
-  height: 380px;
-  position: relative;  /* needed for text span */
-}
-.index_city_boxes:hover { 
-  border: 1px $greyPrimary solid; 
-}
-/* Boxes Text Styles */
-.index_city_boxes span {
-  color: $white;
-  font-size: 200%;
-  font-weight: bold;
-  text-shadow: 1px 1px rgba(97, 97, 97, 0.7);
-  position: absolute; /* needed to set text span below */
-  top: 0; left: 0;
-}
-
-/* Home Page Images - change image name as cities change */
-.box1 { background-image: image-url('index_city_pdx.jpg') } /* Portland */
-.box1 span { top: 85%; left: 10%;  }
-
-.box2 { background-image: image-url('index_city_sea.jpg') } /* Seattle */
-.box2 span { top: 10%; left: 55%; }
-
-.box3 { background-image: image-url('index_city_sf.jpg') } /* San Francisco */
-.box3 span { top: 85%; left: 25%; }
-
-.box4 { background-image: image-url('index_city_bend.jpg') } /* Bend */
-.box4 span { top: 55%; left: 65%; }
-
-.box5 { background-image: image-url('index_city_den.jpg') } /* Denver */
-.box5 span { top: 85%; left: 10%; }
-
-.box6 { background-image: image-url('index_city_hnl.jpg') } /* Honolulu */
-.box6 span { top: 55%; left: 45%; }
-
-
 .loc_each_container {
   background-color: $white;
   @include border-radius(7px);
@@ -76,12 +7,29 @@
   margin-bottom: 1em;
   overflow: hidden;
 }
-.loc_each_container_index {
-  @extend .loc_each_container;
-  margin-bottom: 5em;
+.loc_each_container_row {
+  width: 100%;
+  display: inline-block;
+  margin: 1em 0 0.5em 0;
+  padding: 0 0 0.5em 0;
+  border-bottom: $greyLight 1px solid;
 }
-.loc_each_container_L { float: left; width: 85%; }
-.loc_each_container_R { float: left; }
+/* for public: each, state and city */
+.loc_each_container_all { float: left; width: 100%; }
+
+.loc_each_container_L { float: left; width: 10%; margin-right: 1em; }
+.loc_each_container_R { float: left; width: 85%; }
+
+.loc_each_city_container_L { float: left; width: 85%; }
+.loc_each_city_container_R { float: left;}
+
+.loc_each_state_container_L { float: left; width: 85%; margin-right: 1em; }
+.loc_each_state_container_R { float: left; border: 1px solid red;}
+
+.star_rating {
+  color: $lime;
+  font-size: 150%;
+}
 
 .loc_each_breadcrumb {
   background-color: $white;
@@ -89,6 +37,9 @@
   padding: 1em 1em;
   margin-bottom: 1em;
 }
+
+
+
 table {
   min-width: 100%;
   margin: 1em 0;

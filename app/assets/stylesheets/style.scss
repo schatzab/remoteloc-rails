@@ -10,6 +10,7 @@ $greyPrimary: #777777;
 $alertRed: #FA0C1C;
 $alertGreen: #6bac4e;
 $lime: #ACDE2C;
+$starYellow: #FFFF05;
 
 body { 
   color: $greyPrimary; 
@@ -65,3 +66,4 @@ h2 { color: $primaryColor; }
 @import 'admin';
 @import 'sap';
 @import 'flash';
+@import 'index';

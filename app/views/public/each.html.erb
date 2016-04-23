@@ -11,25 +11,31 @@
 </ul>
 
 <!-- back goes back to index to see ALL values -->
-<div class="locs city loc_each_container">
+<div class="loc_each_container">
   <h2><%= @loc.name %></h2>
 
-  <table summary="Loc detail view">
-    <tr>
-      <th>Content</th>
-      <td><%= @loc.content %></td> 
-    </tr>
-    <tr>
-      <th>Website</th>
-      <td><%= link_to("#{@loc.name} Website", "#{@loc.website}", class: 'back-link', target: "_blank") %></td> 
-    </tr>
-    <tr>
-      <th>Phone</th>
-      <td><a href="tel:<%= @loc.phone %>"><%= @loc.phone %></a></td> 
-    </tr>
-    <tr>
-      <th>Address</th>
-      <td><%= @loc.address %></td>
-    </tr>
-  </table>
+
+
+
+
+
+   <div class="loc_each_container_row">
+      <div class="loc_each_container_all"><%= @loc.content %></div>
+    </div>
+
+
+    <div class="loc_each_container_row">
+      <div class="loc_each_container_L">Website</div>
+      <div class="loc_each_container_R"><%= link_to("#{@loc.name} Website", "#{@loc.website}", class: 'back-link', target: "_blank") %></div> 
+    </div>
+
+    <div class="loc_each_container_row">
+      <div class="loc_each_container_L">Phone</div>
+      <div class="loc_each_container_R"><a href="tel:<%= @loc.phone %>"><%= @loc.phone %></a></div> 
+    </div>
+
+    <div class="loc_each_container_row">
+      <div class="loc_each_container_L">Address</div>
+      <div class="loc_each_container_R"><%= @loc.address %></div> 
+    </div>
 </div>
