@@ -14,10 +14,16 @@
 <div class="loc_each_container">
   <h2><%= @loc.name %></h2>
 
-
-
-
-
+    <!-- Star Ratings -->
+    <div class="loc_each_container_row">
+      <div class="loc_each_container_all">
+          <a href=""><span class="glyphicon glyphicon-star star_rating"></span></a>
+          <span class="glyphicon glyphicon-star-empty star_rating"></span>
+          <span class="glyphicon glyphicon-star-empty star_rating"></span>
+          <span class="glyphicon glyphicon-star-empty star_rating"></span>
+          <span class="glyphicon glyphicon-star-empty star_rating"></span>
+      </div>
+    </div>
 
    <div class="loc_each_container_row">
       <div class="loc_each_container_all"><%= @loc.content %></div>
@@ -26,7 +32,7 @@
 
     <div class="loc_each_container_row">
       <div class="loc_each_container_L">Website</div>
-      <div class="loc_each_container_R"><%= link_to("#{@loc.name} Website", "#{@loc.website}", class: 'back-link', target: "_blank") %></div> 
+      <div class="loc_each_container_R"><%= link_to("#{@loc.name}", "#{@loc.website}", class: 'back-link', target: "_blank") %></div> 
     </div>
 
     <div class="loc_each_container_row">
